@@ -6,3 +6,7 @@ Material del curso de Posgrado de experimentacion y metodos estadisticos en MCF 
 +crear 
 +sincronizar
 +credenciales
+
+##configuracion desde computadora personal
++sincronizado
++listo
