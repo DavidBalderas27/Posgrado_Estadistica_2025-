@@ -81,9 +81,9 @@ barplot(gastosordenados, names.arg = nombres_variables)
 
 #problema 3
 
-# por si solos los medios de electronicos para expresar una opinion son cualitativos, ya que pertenecen a un tipo de categoria, al darles un valor (1-5) y formar una lista con frecuencias se vuelve cuantitativo = semicuantitativos
+#por si solos los medios de electronicos para expresar una opinion son cualitativos, ya que pertenecen a un tipo de categoria, al darles un valor (1-5) y formar una lista con frecuencias se vuelve cuantitativo = semicuantitativos
 
-# problema 4
+#problema 4
 
 #pregunta 1: individuo: estudiante universidad publica, variable: tiempo de trabajo, cuantitativo
 
@@ -93,6 +93,6 @@ barplot(gastosordenados, names.arg = nombres_variables)
 
 #pregunta 4: individuo:atletas variable: asesoramiento academico, cualitativa
 
-#pregunta 4: datos para histogramas: al ser de variable cualitativa no se podria generar, para ello se puede emplear otro tipo de graficos como: barras, pastel o mosaico para comprar categorias, muestra de proporciones y relacion entre categorias respectivamente. 
+#pregunta 5: datos para histogramas: al ser de variable cualitativa no se podria generar, para ello se puede emplear otro tipo de graficos como: barras, pastel o mosaico para comprar categorias, muestra de proporciones y relacion entre categorias respectivamente. 
 
 
