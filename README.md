@@ -56,43 +56,116 @@ nombres_variables <- c("otros", "combustibles", "renta", "gym", "celular", "tras
 
 barplot(gastosordenados, names.arg = nombres_variables)
 
-# tarea 1 parte 2
+# Parte 1: Análisis de Gastos Mensuales
 
-#problema 1
+## Cálculo de Gastos
 
-#nombre est: cualitativo
-#fecha de nacimiento: cuantitativo
-#edad: cuantitativo
-#direccion: cualitativo
-#numoero de telefono: cualitativo
-#area de estudio: cuantitativa
-#grado universitario: cualitativo
-#calificacion: cuantitativo
-#calificacion con letras: cuantitacibo si cada letra corrsponde a un valor
-#tiempo: cuantitativo 
-#no. de hermanos: cuantitativo
+```{r calculo_gastos, include=FALSE}
+# Gastos mensuales
+celular <- 300
+transporte <- 240
+combustible <- 1527
+gym <- 400
+renta <- 1500
+otros <- 1833
 
-#problema 2
+# Vector de gastos
+gastos <- c(celular, transporte, combustible, gym, renta, otros)
+nombres <- c("Celular", "Transporte", "Combustible", "Gym", "Renta", "Otros")
 
-#animales
-#var_cauntitivas: edad, peso, longitud, numero de desendencia, tiempo de gestacion, temperatura, velocidad
+# Cálculo del total
+total <- sum(gastos)
 
-#var_cualitativas: especie, dieta, color, tipo de actividad, tipo de reproduccion, lugar de habitat, distribucion 
+# Proyección a 5 y 10 meses
+proyeccion_5_meses <- total * 5
+proyeccion_10_meses <- total * 10
 
-#problema 3
+# Ordenar gastos de mayor a menor
+gastos_ordenados <- sort(gastos, decreasing = TRUE)
+nombres_gastos <- c("Otros", "Combustible", "Renta", "Gym", "Celular", "Transporte")
+```
 
-#por si solos los medios de electronicos para expresar una opinion son cualitativos, ya que pertenecen a un tipo de categoria, al darles un valor (1-5) y formar una lista con frecuencias se vuelve cuantitativo = semicuantitativos
+### Resultados Numéricos
 
-#problema 4
+- **Total de gastos mensuales:** \$`r total`
+- **Proyección a 5 meses:** \$`r proyeccion_5_meses`
+- **Proyección a 10 meses:** \$`r proyeccion_10_meses`
 
-#pregunta 1: individuo: estudiante universidad publica, variable: tiempo de trabajo, cuantitativo
+## Gráfico de Gastos
 
-#pregunta 2: individuo: estudiantes unioversitarios de Mexico, variable: proporcion de estudiantes en publicas, cuantitativo
+```{r grafico_barras, fig.cap="Distribución de Gastos Mensuales ordenados de mayor a menor", fig.height=5, fig.width=8}
+# Gráfico de barras
+barplot(gastos_ordenados, names.arg = nombres_gastos)
 
-#pregunta 3: individuo:  estudiantes por sexo, variable: calificacion de ceneval, cuantitativo
+        
+```
 
-#pregunta 4: individuo:atletas variable: asesoramiento academico, cualitativa
+```
 
-#pregunta 5: datos para histogramas: al ser de variable cualitativa no se podria generar, para ello se puede emplear otro tipo de graficos como: barras, pastel o mosaico para comprar categorias, muestra de proporciones y relacion entre categorias respectivamente. 
+# Parte 2: Clasificación de Variables
+
+## Problema 1: Clasificación de Variables Estudiantiles
+
+**Variables Cualitativas:**
+- Nombre del estudiante
+- Dirección
+- Número de teléfono
+- Grado universitario
+
+**Variables Cuantitativas:**
+- Fecha de nacimiento (cuantitativa)
+- Edad (cuantitativa)
+- Área de estudio (cuantitativa si se codifica numéricamente)
+- Calificación numérica (cuantitativa)
+- Tiempo (cuantitativa)
+- Número de hermanos (cuantitativa)
+
+- Calificación con letras: Semicuantitativa 
+
+## Problema 2: Variables en el Estudio de Animales
+
+**Variables Cuantitativas:**
+- Edad
+- Peso
+- Longitud
+- Número de descendencia
+- Tiempo de gestación
+- Temperatura
+- Velocidad
+
+**Variables Cualitativas:**
+- Especie
+- Dieta
+- Color
+- Tipo de actividad
+- Tipo de reproducción
+- Lugar de hábitat
+- Distribución geográfica
+
+## Problema 3: Escala de Opinión sobre Medios Electrónicos
+
+Los medios electrónicos para expresar opinión son variables semicuantitativas. Inicialmente son cualitativos, pero al asignarles valores numéricos (1-5) se convierten en variables ordinales que permiten análisis cuantitativos de frecuencias etc...
+
+## Problema 4: Identificación de Individuos y Variables
+
+1. **Individuo:** Estudiante de universidad pública  
+   **Variable:** Tiempo de trabajo  
+   **Tipo:** Cuantitativa 
+
+2. **Individuo:** Estudiantes universitarios de México  
+   **Variable:** Proporción de estudiantes en públicas  
+   **Tipo:** Cuantitativa 
+
+3. **Individuo:** Estudiantes por sexo  
+   **Variable:** Calificación de CENEVAL  
+   **Tipo:** Cuantitativa 
+
+4. **Individuo:** Atletas  
+   **Variable:** Asesoramiento académico  
+   **Tipo:** Cualitativa 
+
+## Problema 5: Visualización de Datos Cualitativos
+
+Para variables cualitativas no se pueden usar histogramas, ya que estos requieren variables cuantitativas continuas. Para estso datos se utiliza, Gráfico de barras,Gráfico de pastel, Gráfico de mosaico;  Para comparar frecuencias entre categorías,mostrar proporciones porcentuales y visualizar relaciones entre múltiples variables respectivamente
 
 
