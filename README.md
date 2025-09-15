@@ -11,9 +11,9 @@ Material del curso de Posgrado de experimentacion y metodos estadisticos en MCF 
 +sincronizado
 +listo
 
-##Tarea 1 (primera parte)
+## Tarea 1 (primera parte)
  
-# Gastos totales
+#Gastos totales
 300 + 240 +1527 + 400 + 1500 + 1833
 
 celular <- 300
@@ -56,7 +56,7 @@ nombres_variables <- c("otros", "combustibles", "renta", "gym", "celular", "tras
 
 barplot(gastosordenados, names.arg = nombres_variables)
 
-#tarea 1 parte 2
+# tarea 1 parte 2
 
 #problema 1
 
