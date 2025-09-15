@@ -11,7 +11,7 @@ Material del curso de Posgrado de experimentacion y metodos estadisticos en MCF 
 +sincronizado
 +listo
 
-## Tarea 1 (primera parte)
+## Tarea 1 parte 1
  
 #Gastos totales
 300 + 240 +1527 + 400 + 1500 + 1833
