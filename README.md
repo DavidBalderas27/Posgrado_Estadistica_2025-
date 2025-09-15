@@ -62,7 +62,7 @@ barplot(gastosordenados, names.arg = nombres_variables)
 
 #nombre est: cualitativo
 #fecha de nacimiento: cuantitativo
-# edad: cuantitativo
+#edad: cuantitativo
 #direccion: cualitativo
 #numoero de telefono: cualitativo
 #area de estudio: cuantitativa
