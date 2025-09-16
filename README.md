@@ -56,7 +56,7 @@ nombres_variables <- c("otros", "combustibles", "renta", "gym", "celular", "tras
 
 barplot(gastosordenados, names.arg = nombres_variables)
 
-# Parte 1: Análisis de Gastos Mensuales
+#Parte 1: Análisis de Gastos Mensuales
 
 ## Cálculo de Gastos
 
@@ -85,13 +85,13 @@ gastos_ordenados <- sort(gastos, decreasing = TRUE)
 nombres_gastos <- c("Otros", "Combustible", "Renta", "Gym", "Celular", "Transporte")
 ```
 
-### Resultados Numéricos
+###Resultados Numéricos
 
 - **Total de gastos mensuales:** \$`r total`
 - **Proyección a 5 meses:** \$`r proyeccion_5_meses`
 - **Proyección a 10 meses:** \$`r proyeccion_10_meses`
 
-## Gráfico de Gastos
+##Gráfico de Gastos
 
 ```{r grafico_barras, fig.cap="Distribución de Gastos Mensuales ordenados de mayor a menor", fig.height=5, fig.width=8}
 # Gráfico de barras
@@ -102,9 +102,9 @@ barplot(gastos_ordenados, names.arg = nombres_gastos)
 
 
 
-# Parte 2: Clasificación de Variables
+#Parte 2: Clasificación de Variables
 
-## Problema 1: Clasificación de Variables Estudiantiles
+##Problema 1: Clasificación de Variables Estudiantiles
 
 **Variables Cualitativas:**
 - Nombre del estudiante
@@ -122,7 +122,7 @@ barplot(gastos_ordenados, names.arg = nombres_gastos)
 
 - Calificación con letras: Semicuantitativa 
 
-## Problema 2: Variables en el Estudio de Animales
+##Problema 2: Variables en el Estudio de Animales
 
 **Variables Cuantitativas:**
 - Edad
@@ -142,11 +142,11 @@ barplot(gastos_ordenados, names.arg = nombres_gastos)
 - Lugar de hábitat
 - Distribución geográfica
 
-## Problema 3: Escala de Opinión sobre Medios Electrónicos
+##Problema 3: Escala de Opinión sobre Medios Electrónicos
 
 Los medios electrónicos para expresar opinión son variables semicuantitativas. Inicialmente son cualitativos, pero al asignarles valores numéricos (1-5) se convierten en variables ordinales que permiten análisis cuantitativos de frecuencias etc...
 
-## Problema 4: Identificación de Individuos y Variables
+##Problema 4: Identificación de Individuos y Variables
 
 1. **Individuo:** Estudiante de universidad pública  
    **Variable:** Tiempo de trabajo  
@@ -164,13 +164,13 @@ Los medios electrónicos para expresar opinión son variables semicuantitativas.
    **Variable:** Asesoramiento académico  
    **Tipo:** Cualitativa 
 
-## Problema 5: Visualización de Datos Cualitativos
+##Problema 5: Visualización de Datos Cualitativos
 
 Para variables cualitativas no se pueden usar histogramas, ya que estos requieren variables cuantitativas continuas. Para estso datos se utiliza, Gráfico de barras,Gráfico de pastel, Gráfico de mosaico;  Para comparar frecuencias entre categorías,mostrar proporciones porcentuales y visualizar relaciones entre múltiples variables respectivamente
 
 
 ### Tarea 2 Iris
-# Primer contacto con R
+#Primer contacto con R
 ´´´
 {r}
 iris
@@ -185,33 +185,33 @@ head (data_sub)
 
 summary (data_sub)
 
-# Petal.Length por especie
+#Petal.Length por especie
 tapply(data_sub$Petal.Length, data_sub$Species, summary)
 
-# Prueba estadistica:
+#Prueba estadistica:
 
-# Pregunta de investigacion: ¿Existe diferencia significativa en la longitud del pétalo entre ambas especies?
+#Pregunta de investigacion: ¿Existe diferencia significativa en la longitud del pétalo entre ambas especies?
 
-# Hipotesis: No existe diferencia en la longitud del petalo H₀: μ_versicolor = μ_virginica, existe una diferencia significativa en la longitud H₁: μ_versicolor ≠ μ_virginica
+#Hipotesis: No existe diferencia en la longitud del petalo H₀: μ_versicolor = μ_virginica, existe una diferencia significativa en la longitud H₁: μ_versicolor ≠ μ_virginica
 
 var.test(Petal.Length ~ Species, data = data_sub)
 
 t.test(Petal.Length ~ Species, data = data_sub,  var.equal = TRUE,   # Asume varianzas iguales
 alternative = "two.sided")
 
-# Medias y desviaciones estándar
+#Medias y desviaciones estándar
 media_virginica <- mean(data_sub$Petal.Length[data_sub$Species == "virginica"])
 media_versicolor <- mean(data_sub$Petal.Length[data_sub$Species == "versicolor"])
 sd_virginica <- sd(data_sub$Petal.Length[data_sub$Species == "virginica"])
 sd_versicolor <- sd(data_sub$Petal.Length[data_sub$Species == "versicolor"])
 
-# Desviación estándar pooled
+#Desviación estándar pooled
 n_virginica <- sum(data_sub$Species == "virginica")
 n_versicolor <- sum(data_sub$Species == "versicolor")
 sd_pooled <- sqrt(((n_virginica-1)*sd_virginica^2 + (n_versicolor-1)*sd_versicolor^2) / 
                   (n_virginica + n_versicolor - 2))
 
-# Cohen's d
+#Cohen's d
 d_cohen <- (media_virginica - media_versicolor) / sd_pooled
 print(d_cohen)
 
