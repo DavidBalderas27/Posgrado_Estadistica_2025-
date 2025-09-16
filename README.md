@@ -169,3 +169,58 @@ Los medios electrónicos para expresar opinión son variables semicuantitativas.
 Para variables cualitativas no se pueden usar histogramas, ya que estos requieren variables cuantitativas continuas. Para estso datos se utiliza, Gráfico de barras,Gráfico de pastel, Gráfico de mosaico;  Para comparar frecuencias entre categorías,mostrar proporciones porcentuales y visualizar relaciones entre múltiples variables respectivamente
 
 
+##Tarea 2 Iris
+# Primer contacto con R
+´´´
+{r}
+iris
+View (iris)
+
+data_sub <- subset(iris, Species %in% c("versicolor", "virginica"))
+table(data_sub)
+
+View(data_sub)
+
+head (data_sub)
+
+summary (data_sub)
+
+# Petal.Length por especie
+tapply(data_sub$Petal.Length, data_sub$Species, summary)
+
+# Prueba estadistica:
+
+# Pregunta de investigacion: ¿Existe diferencia significativa en la longitud del pétalo entre ambas especies?
+
+# Hipotesis: No existe diferencia en la longitud del petalo H₀: μ_versicolor = μ_virginica, existe una diferencia significativa en la longitud H₁: μ_versicolor ≠ μ_virginica
+
+var.test(Petal.Length ~ Species, data = data_sub)
+
+t.test(Petal.Length ~ Species, data = data_sub,  var.equal = TRUE,   # Asume varianzas iguales
+alternative = "two.sided")
+
+# Medias y desviaciones estándar
+media_virginica <- mean(data_sub$Petal.Length[data_sub$Species == "virginica"])
+media_versicolor <- mean(data_sub$Petal.Length[data_sub$Species == "versicolor"])
+sd_virginica <- sd(data_sub$Petal.Length[data_sub$Species == "virginica"])
+sd_versicolor <- sd(data_sub$Petal.Length[data_sub$Species == "versicolor"])
+
+# Desviación estándar pooled
+n_virginica <- sum(data_sub$Species == "virginica")
+n_versicolor <- sum(data_sub$Species == "versicolor")
+sd_pooled <- sqrt(((n_virginica-1)*sd_virginica^2 + (n_versicolor-1)*sd_versicolor^2) / 
+                  (n_virginica + n_versicolor - 2))
+
+# Cohen's d
+d_cohen <- (media_virginica - media_versicolor) / sd_pooled
+print(d_cohen)
+
+ggplot(data_sub, aes(x = Species, y = Petal.Length, fill = Species)) + geom_boxplot(alpha = 0.8) +  labs(title = "Diferencia en Longitud del Pétalo entre Especies", subtitle = "Iris versicolor vs Iris virginica", x = "Especies", y = "Longitud del Pétalo (cm)", caption = paste("Prueba t: p < 2.2e-16",                    "Cohen's d ≈ -2.5 (efecto muy grande)", sep = "\n")) +
+scale_fill_manual(values = c("versicolor" = "#FF6B6B",
+"virginica" = "#4ECDC4")) + theme_minimal() +   theme(legend.position = "none")
+
+library(ggplot2)
+  
+
+
+
