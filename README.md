@@ -100,7 +100,7 @@ barplot(gastos_ordenados, names.arg = nombres_gastos)
         
 ```
 
-```
+
 
 # Parte 2: Clasificación de Variables
 
