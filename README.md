@@ -169,7 +169,7 @@ Los medios electrónicos para expresar opinión son variables semicuantitativas.
 Para variables cualitativas no se pueden usar histogramas, ya que estos requieren variables cuantitativas continuas. Para estso datos se utiliza, Gráfico de barras,Gráfico de pastel, Gráfico de mosaico;  Para comparar frecuencias entre categorías,mostrar proporciones porcentuales y visualizar relaciones entre múltiples variables respectivamente
 
 
-##Tarea 2 Iris
+### Tarea 2 Iris
 # Primer contacto con R
 ´´´
 {r}
